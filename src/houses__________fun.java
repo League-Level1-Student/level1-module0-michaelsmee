@@ -6,12 +6,12 @@ import org.jointheleague.graphical.robot.Robot;
 public class houses__________fun {
 public static void main(String[] args) {
 	
-Robot rob = new Robot();
+Robot bob = new Robot();
 
-rob.setSpeed(100);
-rob.setX(50);
-rob.setY(500);	
-rob.penDown();
+bob.setSpeed(100);
+bob.setX(50);
+bob.setY(500);	
+bob.penDown();
 Random rand=new Random();
 String oof = " ";
 Color color = null;
@@ -29,7 +29,7 @@ else if(o==2) {
 oof = "large";
 color=Color.LIGHT_GRAY;
 }
-drawHouse(rob, oof, color);
+drawHouse(bob, oof, color);
 }
 
 }
@@ -47,11 +47,12 @@ static void drawHouse(Robot rob, String size, Color color) {
 	}
 	rob.setPenColor(color);
 	rob.move(height);
-	rob.turn(45);
-	rob.move(50);
-	rob.turn(90);
-	rob.move(50);
-	rob.turn(45);
+	if(height == 250) {
+	flatmobile(rob);	
+	}
+	else {
+	pointPoint(rob);	
+	}
 	rob.move(height);
 	rob.turn(-90);
 	rob.setPenColor(0,200,0);
@@ -59,4 +60,18 @@ static void drawHouse(Robot rob, String size, Color color) {
     rob.setAngle(0);
 }
 
+static void pointPoint(Robot rob) {
+	rob.turn(45);
+	rob.move(50);
+	rob.turn(90);
+	rob.move(50);
+	rob.turn(45);
+	
 }
+static void flatmobile(Robot rob) {
+	rob.turn(90);
+	rob.move(50);
+	rob.turn(90);
+}
+}
+
