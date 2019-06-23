@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+	JLabel drumLabelWithImage1;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -32,7 +32,7 @@ frame.setVisible(true);
 		// 3. Set the size of the frame
 frame.setSize(500,500);
 		// 4. Set the title of the frame
-frame.setTitle("tittle");
+frame.setTitle("drum set...wow");
 		// 5. Make a JPanel variable and initialize it using "new JPanel().
 JPanel panel                 = new JPanel();
 		// 6. Add the panel to the frame. (The panel is invisible.)
@@ -48,14 +48,25 @@ String drum = "now that's a drum.jpg";
 		// 10. Add the image to the panel
 panel.add(drumLabelWithImage);
 		// 11. Set the layout of the panel to "new GridLayout()"
-
+panel.setLayout(new GridLayout());
 		// 12. call the pack() method on the frame. Run your program. Do you see
 		// your drum image?
-
+frame.pack();
 		// 13. add this mouse listener to drumLabelWithImage
-
+drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
+frame.add(panel);
+String drum2 = "wapow.jpg";
+
+drumLabelWithImage1 = createLabelImage(drum2);
+
+panel.add(drumLabelWithImage1);	
+
+drumLabelWithImage1.addMouseListener(this);
+
+	
+frame.pack();	
 
 	}
 
@@ -64,7 +75,7 @@ panel.add(drumLabelWithImage);
 		// the console to see when this is printed.
 
 		JLabel drumClicked = (JLabel) e.getSource(); // This line gets the label
-														// that the mouse
+		System.out.println(drumClicked);												// that the mouse
 														// clicked on
 
 		// 15. Download a drum sound and drop it into your "default package".
@@ -72,11 +83,17 @@ panel.add(drumLabelWithImage);
 		// leagueofamazing/code4life.
 
 		// 16. If they clicked on the drumImage...
-
+if(drumClicked == drumLabelWithImage) {
+	playSound("wow.wav");
+}
+if(drumClicked == drumLabelWithImage1) {
+	playSound("karate.wav");
+}
+}
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
 
-	}
+	
 
 	private JLabel createLabelImage(String fileName) throws MalformedURLException {
 		URL imageURL = getClass().getResource(fileName);
