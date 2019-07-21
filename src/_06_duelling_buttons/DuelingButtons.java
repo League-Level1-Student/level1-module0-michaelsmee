@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class DuelingButtons implements ActionListener {
@@ -46,12 +47,18 @@ public class DuelingButtons implements ActionListener {
 		frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
 		frame.setTitle("Demanding Buttons");
+	
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
-
+		if (buttonPressed == leftButton) { JOptionPane.showMessageDialog(null, "No, click me!");
+		rightButton.setPreferredSize(BIG);
+		}
+		if (buttonPressed == rightButton) { JOptionPane.showMessageDialog(null, "CLick me!");
+		leftButton.setPreferredSize(BIG);
+		}
 		/* If the buttonPressed was the leftButton.... */
 		// Set the text of the rightButton to "No, click Me!"
 		// Set the PREFERRED size of the rightButton to BIG
