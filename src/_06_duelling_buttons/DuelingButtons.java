@@ -19,7 +19,7 @@ public class DuelingButtons implements ActionListener {
 	JButton leftButton = new JButton();
 	JButton rightButton = new JButton();
 
-	Dimension BIG = new Dimension(400, 400);
+	Dimension BIG = new Dimension(800, 800);
 	Dimension SMALL = new Dimension(200, 200);
 
 	JFrame frame = new JFrame();
@@ -53,11 +53,18 @@ public class DuelingButtons implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
-		if (buttonPressed == leftButton) { JOptionPane.showMessageDialog(null, "No, click me!");
+		if (buttonPressed == leftButton) 
+		{rightButton.setText("No, click left you evil robloxian");
 		rightButton.setPreferredSize(BIG);
+		leftButton.setText("Click me");
+		leftButton.setPreferredSize(SMALL);
+		
 		}
-		if (buttonPressed == rightButton) { JOptionPane.showMessageDialog(null, "CLick me!");
+		else if (buttonPressed == rightButton) 
+		{leftButton.setText("Silly human, always click right");
 		leftButton.setPreferredSize(BIG);
+		rightButton.setText("Click me");
+		rightButton.setPreferredSize(SMALL);
 		}
 		/* If the buttonPressed was the leftButton.... */
 		// Set the text of the rightButton to "No, click Me!"
