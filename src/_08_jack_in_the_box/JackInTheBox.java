@@ -41,6 +41,7 @@ public void showButton() {
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        frame.add(imageLabel);
 	        frame.setVisible(true);
+	        frame.pack();
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
@@ -71,7 +72,7 @@ public void showButton() {
 		i++;
 	if(i == 5) {
 		System.out.println("in if");
-	panel.add(	createLabelImage("JackInTheBox.png"));
+	showPicture("JackInTheBox.png");
 	}
 	}
 }
