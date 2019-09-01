@@ -8,8 +8,8 @@ void setup(){
             //in setup method
   
   minim = new Minim(this);    //in the setup method
-  song = minim.loadFile("awesomeTrack.mp3", 512);   //in the setup method
-   
+  song = minim.loadFile("k.mp3", 512);   //in the setup method
+  
                                         //in setup method
         pictureOfRecord= loadImage("aksel.png");      //in setup method
        
@@ -24,7 +24,12 @@ void draw(){
    speed+=1;
   if(mousePressed){
     rotateImage(pictureOfRecord, speed);
-  }
+song.play();   
+}
+
+else{
+ song.pause(); 
+}
 image(pictureOfRecord, 0, 0);  //in draw method
   
 }
